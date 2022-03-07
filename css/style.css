@@ -19,12 +19,11 @@ h2 {
   font-weight: 400;
 }
 
-header {
+#header {
   width: 100%;
   height: 100%;
   z-index: 3;
   margin: 0;
-  margin-bottom: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,10 +47,15 @@ header {
   z-index: 3;
 }
 
+#navbar h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
 #fade-top {
   position: fixed;
   width: 100%;
-  height: 216px;
+  height: 160px;
   display: block;
   top: 0;
   z-index: 2;
@@ -67,7 +71,7 @@ header {
 #fade-bottom {
   position: fixed;
   width: 100%;
-  height: 216px;
+  height: 160px;
   display: block;
   bottom: 0;
   z-index: 2;
@@ -83,24 +87,12 @@ header {
 #footer {
   margin: 0;
   padding: 0;
-  height: 216px;
-}
-
-@media screen and (max-width: 1000px) {
-  body {
-    font-size: 1.4rem;
-  }
-  h2 {
-    font-size: 1rem;
-  }
-  header {
-    background-position: bottom left 70%;
-  }
+  height: 160px;
 }
 
 section {
-  padding: 10% 10%;
-  padding-bottom: 5%;
+  padding: 15vh 10vw;
+  padding-bottom: 0;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
@@ -114,7 +106,7 @@ h1 {
   font-size: 3.5rem;
   font-weight: 300;
   padding: 0;
-  margin: 0;
+  margin: 10px;
 }
 
 .color-one {
@@ -126,11 +118,8 @@ h1 {
 .color-three {
   color: #645cc4;
 }
-.site-title {
-  margin: 10px;
-}
 
-.sub-title {
+#sub-title {
   margin: 0;
   margin-left: 20px;
   margin-right: 20px;
@@ -152,27 +141,6 @@ li {
   width: auto;
 }
 
-@media screen and (max-width: 600px) {
-  h1 {
-      font-size: 2rem;
-  }
-  #fade-top {
-      height: 129px;
-  }
-  #fade-bottom {
-      height: 129px;
-  }
-  #footer {
-    height: 129px;
-  }
-  .sub-title {
-    font-size: 1.2rem;
-  }
-  li {
-    display: block;
-  }
-}
-
 
 a {
   background: transparent;
@@ -184,19 +152,50 @@ a:hover {
 a:active, a:hover {
   outline: 0;
 }
-
 a.silent, a.silent:hover, a.silent:active {
   color: inherit;
   text-decoration: none;
 }
 
-#arrow {
-  color: black;
-  font-size: 3em;
-  opacity: 0.7;
-  cursor: pointer;
+@media screen and (max-width: 1000px) {
+  #header {
+    background-position: bottom left 70%;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1.4rem;
+  }
 }
-#arrow:hover {
-  opacity: 1.0;
+
+@media screen and (max-width: 600px) {
+  #sub-title {
+    font-size: 1.2rem;
+  }
+  #navbar h1 {
+    font-size: 2rem;
+  }
+  #fade-top {
+    height: 130px;
+  }
+  #fade-bottom {
+   height: 130px;
+  }
+  #footer {
+    height: 130px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 0.8rem;
+  }
+  body {
+    font-size: 1.2rem;
+  }
+  li {
+    display: block;
+  }
 }
 

@@ -1,9 +1,3 @@
-function scrollToAbout() {
-    document
-        .getElementById("about-section")
-        .scrollIntoView({behavior: "smooth", block: "center"});
-}
-
 function scrollFunction() {
     function calcOpacity(y1, y2) {
         if (y1 > 0)
@@ -14,9 +8,9 @@ function scrollFunction() {
         return (delta - y2) / delta;
     }
 
-    const arrowTop = document.getElementById('arrow').getBoundingClientRect().top;
+    const subTitleBottom = document.getElementById('sub-title').getBoundingClientRect().bottom;
     const headerBottom = document.getElementById('header').getBoundingClientRect().bottom;
-    const opacity = calcOpacity(arrowTop, headerBottom);
+    const opacity = calcOpacity(subTitleBottom, headerBottom);
     document.getElementById("navbar").style.opacity = opacity;
 
     updateFadeTopVisibility(opacity === 1);
@@ -28,10 +22,11 @@ function updateFadeTopVisibility(navbarFullyVisible) {
 }
 
 function updateFadeBottomVisibility() {
+    const clientHeight = window.innerHeight || document.documentElement.clientHeight;
+    const aboutTitle = document.getElementById("about-title").getBoundingClientRect().top;
+
     var fadeBottom = document.getElementById("fade-bottom");
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const fadeBottomHeight = fadeBottom.offsetHeight;
-    fadeBottom.style.visibility = scrollTop > fadeBottomHeight ? "visible" : "hidden";
+    fadeBottom.style.visibility = aboutTitle <= clientHeight ? "visible" : "hidden";
 }
 
 window.onscroll = function() { scrollFunction() };
