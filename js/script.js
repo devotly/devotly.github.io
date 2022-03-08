@@ -1,4 +1,4 @@
-function scrollFunction() {
+function scrollHandler() {
     function calcOpacity(y1, y2) {
         if (y1 > 0)
             return 0;
@@ -14,19 +14,40 @@ function scrollFunction() {
     document.getElementById("navbar").style.opacity = opacity;
 
     updateFadeTopVisibility(opacity === 1);
-    updateFadeBottomVisibility();
+    slideInSections();
 }
 
 function updateFadeTopVisibility(navbarFullyVisible) {
     document.getElementById("fade-top").style.visibility = navbarFullyVisible ? "visible" : "hidden";
 }
 
-function updateFadeBottomVisibility() {
+function slideInSections() {
     const clientHeight = window.innerHeight || document.documentElement.clientHeight;
-    const aboutTitle = document.getElementById("about-title").getBoundingClientRect().top;
+    const sections = document.getElementsByTagName("section");
 
-    var fadeBottom = document.getElementById("fade-bottom");
-    fadeBottom.style.visibility = aboutTitle <= clientHeight ? "visible" : "hidden";
+    Array.prototype.forEach.call(sections, function(section) {
+        const visible = section.getBoundingClientRect().top <= clientHeight;
+        var classList = section.classList
+        if (visible && !classList.contains("slidein")) {
+            classList.add("slidein");
+        }
+    });
 }
 
-window.onscroll = function() { scrollFunction() };
+/* Feature detection */
+let passiveIfSupported = false;
+
+try {
+  window.addEventListener("test", null,
+    Object.defineProperty(
+      {},
+      "passive",
+      {
+        get: function() { passiveIfSupported = { passive: true }; }
+      }
+    )
+  );
+} catch(err) {}
+
+/* Event Listeners */ 
+window.addEventListener('scroll', scrollHandler, passiveIfSupported);
