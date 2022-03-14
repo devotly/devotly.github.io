@@ -42,14 +42,17 @@ h2 {
   display: block;
   font-family: "Roboto Slab", serif;
   font-weight: 300;
-  margin-left: 10px;
   opacity: 0;
   z-index: 3;
 }
 
-#navbar h1 {
-  margin: 0;
-  font-size: 2.5rem;
+.logo {
+  width: 200px;
+  margin: 10px;
+}
+
+#navbar img.logo {
+  width: 150px;
 }
 
 #fade-top {
@@ -99,13 +102,6 @@ section:last-of-type {
 
 b, strong {
   font-weight: bold;
-}
-
-h1 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  padding: 0;
-  margin: 10px;
 }
 
 .color-one {
@@ -182,8 +178,11 @@ a.silent, a.silent:hover, a.silent:active {
   #sub-title {
     font-size: 1.2rem;
   }
-  #navbar h1 {
-    font-size: 2rem;
+  img.logo {
+    width: 120px;
+  }
+  #navbar img.logo {
+    width: 120px;
   }
   #fade-top {
     height: 130px;
@@ -191,9 +190,6 @@ a.silent, a.silent:hover, a.silent:active {
   #footer {
     padding: 10px;
     font-size: 10px;
-  }
-  h1 {
-    font-size: 2rem;
   }
   h2 {
     font-size: 0.8rem;
