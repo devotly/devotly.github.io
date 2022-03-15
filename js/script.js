@@ -8,9 +8,9 @@ function scrollHandler() {
         return (delta - y2) / delta;
     }
 
-    const subTitleBottom = document.getElementById('sub-title').getBoundingClientRect().bottom;
+    const headerLogoTop = document.getElementById('header-logo').getBoundingClientRect().top;
     const headerBottom = document.getElementById('header').getBoundingClientRect().bottom;
-    const opacity = calcOpacity(subTitleBottom, headerBottom);
+    const opacity = calcOpacity(headerLogoTop, headerBottom);
     document.getElementById("navbar").style.opacity = opacity;
 
     updateFadeTopVisibility(opacity === 1);
@@ -49,5 +49,5 @@ try {
   );
 } catch(err) {}
 
-/* Event Listeners */ 
+/* Event Listeners */
 window.addEventListener('scroll', scrollHandler, passiveIfSupported);
