@@ -17,6 +17,10 @@ function scrollHandler() {
     slideInSections();
 }
 
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function updateFadeTopVisibility(navbarFullyVisible) {
     document.getElementById("fade-top").style.visibility = navbarFullyVisible ? "visible" : "hidden";
 }
