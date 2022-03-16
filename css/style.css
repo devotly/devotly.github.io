@@ -163,6 +163,30 @@ a.silent, a.silent:hover, a.silent:active {
   text-decoration: none;
 }
 
+.arrow-down {
+  position: absolute;
+  bottom: 30%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  transform: rotate(45deg);
+  animation: arrow-down 3s infinite;
+}
+@keyframes arrow-down {
+  0% { opacity: 0; transform: rotate(45deg) translate(-15px,-15px); }
+  50% { opacity: 0.8; }
+  100% { opacity: 0; transform: rotate(45deg) translate(15px,15px); }
+}
+@media screen and (max-height: 500px) {
+  .arrow-down {
+    width: 15px;
+    height: 15px;
+    bottom: 10%;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   #header {
     background-position: bottom left 70%;
@@ -176,6 +200,10 @@ a.silent, a.silent:hover, a.silent:active {
 }
 
 @media screen and (max-width: 600px) {
+  .arrow-down {
+    width: 15px;
+    height: 15px;
+  }
   #sub-title {
     font-size: 1.2rem;
   }
