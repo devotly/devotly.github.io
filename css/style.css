@@ -101,6 +101,18 @@ section:last-of-type {
   margin-bottom: 80px;
 }
 
+#offer-section p {
+  text-align: left;
+  margin: 2em 0;
+}
+
+#offer-section p:first-of-type {
+  margin-top: 1em;
+}
+#offer-section p:last-of-type {
+  margin-bottom: 1em;
+}
+
 b, strong {
   font-weight: bold;
 }
@@ -109,10 +121,13 @@ b, strong {
   color: #3cbb75;
 }
 .color-two {
-  color: #c6649f;
+  color: #645cc4;
 }
 .color-three {
-  color: #645cc4;
+  color: #c6649f;
+}
+.color-four {
+  color: #1941db;
 }
 
 #sub-title {
